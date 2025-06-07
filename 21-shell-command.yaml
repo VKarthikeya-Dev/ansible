@@ -1,0 +1,6 @@
+- name: shell vs command
+  hosts: frontend
+  tasks:
+  - name: Shell vs command
+    ansible.builtin.command: "ls-ltr >/tmp/output.txt"
+  
