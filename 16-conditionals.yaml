@@ -1,5 +1,5 @@
 - name: Play for differnt package managers
-  host: frontend
+  hosts: frontend
   tasks:
   - name: Installing nginx
     ansible.builtin.dnf:
