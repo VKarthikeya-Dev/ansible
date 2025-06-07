@@ -2,7 +2,7 @@
   hosts: frontend
   tasks:
   - name: Shell vs command
-    ansible.builtin.shell: "ls-ltr >/tmp/output.txt"
+    ansible.builtin.shell: "ls-ltr > /tmp/output.txt"
     register: command_result
 
   - name: print outcome
