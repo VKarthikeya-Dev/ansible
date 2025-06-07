@@ -1,0 +1,15 @@
+- name: Play with conditionals 
+  hosts: local
+  connection: local
+  vars:
+    number: 20
+  tasks:
+  - name: Play with conditionals
+    ansible.builtin.debug:
+      msg: " The Number {{ number }} is printed as it is less than 100"
+    when: number < 100
+  - name: Play with conditionals
+    ansible.builtin.debug:
+      msg: " The Number {{ number }} is printed as it is than greater than100"
+    when: number > 100
+  
