@@ -4,7 +4,7 @@
   vars:
     batch: 78
     course: Devops with aws
-    Tools:
+    tools:
     - Linux
     - shell
     - Ansible
@@ -14,4 +14,3 @@
   - name: Playing all data type
     ansible.builtin.debug:
       msg: "Welcome to course {{ course }} of batch {{ batch }} we will learn these tools {{ tools }} and these concepts {{ concepts }}"
-      
