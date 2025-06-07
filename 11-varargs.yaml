@@ -1,10 +1,7 @@
 - name: Play level Variables
   hosts: local
   connection: local
-  vars:
-    course: ansible
-    duration: 10HR
-    trainer: sivakumar
+  
   tasks:
   - name: Printing Corse Info
     ansible.builtin.debug:
