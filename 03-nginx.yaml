@@ -1,5 +1,6 @@
 - name: Installing and running a service
   hosts: frontend
+  become: yes
   tasks:
   - name: Installing nginx
     ansible.builtin.package:
