@@ -1,0 +1,13 @@
+- name: Play with loops to install softwares
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: Installing different packages
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'nginx', state: 'present'}
+    - { name: 'mysql', state: 'present'}
+    - { name: 'zip', state: 'absent'}
+
