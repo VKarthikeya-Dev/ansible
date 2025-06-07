@@ -1,0 +1,15 @@
+- name: Play for differnt package managers
+  host: frontend
+  tasks:
+  - name: Installing nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "RedHat"
+  - name: Installing nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
+
+    
