@@ -1,0 +1,10 @@
+- name: Using Var_file to get Variables
+  hosts: local
+  connection: local
+  vars_file:
+  - course.yaml
+  - course2.yaml
+  tasks:
+  - name: Printing Corse Info
+    ansible.builtin.debug:
+      msg: "Hello {{ course }} which is of duration {{ duration }} and is taken by trainer {{ trainer }} review is {{ review }}"
