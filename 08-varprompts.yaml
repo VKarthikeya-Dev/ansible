@@ -1,0 +1,14 @@
+- name: Using Var_file to get Variables
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: username
+    prompt: Enter the username 
+    private: false
+  - name: password
+    prompt: Enter the password
+    
+  tasks:
+  - name: Printing user Info
+    ansible.builtin.debug:
+      msg: "Hello the username is {{ username }} and password is {{ password }}"
