@@ -1,0 +1,17 @@
+- name: Datatype in Ansible
+  hosts: local
+  connection: local
+  vars:
+    batch: 78
+    course: Devops with aws
+    Tools:
+    - Linux
+    - shell
+    - Ansible
+    Concepts:
+    - CI/CD: Jenkins
+  tasks:
+  - name: Playing all data type
+    ansible.builtin.debug:
+      msg: "Welcome to course {{ course }} of batch {{ batch }} we will learn these tools {{ tools }} and these concepts {{ concepts }}"
+      
