@@ -1,0 +1,22 @@
+- name: User creation
+  hosts: local
+  connection: local
+  become: yes
+  vars:
+    user: roboshop
+  tasks:
+  - name: Check user vaialable or no 
+    ansible.builtin.commad: id {{ user }}
+    register: output
+    ignore_errors: true
+    
+  
+  - name: Create user
+    ansible.builtin.command: useradd {{ user }}
+    when: output.rc != 0
+  
+  - name: Skip creating user
+    ansible.builtin.debug:
+      msg: Skipping creation of user
+    when: output.rc == 0
+  
